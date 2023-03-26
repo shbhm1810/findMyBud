@@ -92,7 +92,7 @@ android {
     ndkVersion rootProject.ext.ndkVersion
 
     compileSdkVersion rootProject.ext.compileSdkVersion
-
+    flavorDimensions "default"
     namespace "com.findmybud"
     defaultConfig {
         applicationId "com.findmybud"
@@ -128,6 +128,20 @@ android {
             signingConfig signingConfigs.debug
             minifyEnabled enableProguardInReleaseBuilds
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
+        }
+    }
+    	productFlavors {
+        staging {
+            minSdkVersion rootProject.ext.minSdkVersion
+            applicationId 'com.findMyBud.project.staging'
+            targetSdkVersion rootProject.ext.targetSdkVersion
+            resValue "string", "build_config_package", "com.findMyBud"
+        }
+        prod {
+            minSdkVersion rootProject.ext.minSdkVersion
+            applicationId 'com.findMyBud.project'
+            targetSdkVersion rootProject.ext.targetSdkVersion
+            resValue "string", "build_config_package", "com.findMyBud"
         }
     }
 

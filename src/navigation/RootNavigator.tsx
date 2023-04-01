@@ -5,7 +5,7 @@ import AppNavigator from './AppNavigator';
 import OnBoardingNavigator from './OnboardingNavigator';
 
 function RootNavigator(): JSX.Element {
-  const isLoggedIn = true;
+  const isLoggedIn = false;
   return (
     <NavigationContainer>
       {isLoggedIn ? <AppNavigator /> : <OnBoardingNavigator />}

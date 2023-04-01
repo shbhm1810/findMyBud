@@ -3,35 +3,30 @@ import {StyleSheet, Dimensions} from 'react-native';
 import typography from '../../theme/typography';
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
   imageContainer: {
     flex: 1,
     paddingHorizontal: 20,
     height: Dimensions.get('screen').height,
   },
+  heading: {
+    fontFamily: typography.firesans_semibold,
+    color: 'black',
+    fontSize: 27,
+  },
   subContainer: {
-    flex: 2,
+    marginTop: 20,
   },
-  heading: {fontSize: 22, fontFamily: typography.firesans_bold, color: 'black'},
   subHeading: {
-    fontSize: 15,
-    fontFamily: typography.firesans_light,
-    color: 'grey',
-    fontWeight: '700',
-  },
-  boldSubHeading: {
-    fontSize: 15,
     fontFamily: typography.firesans_light,
     color: 'black',
-    fontWeight: '700',
+    fontSize: 18,
   },
   buttonContainer: {
     borderRadius: 15,
     overflow: 'hidden',
     backgroundColor: '#455ff8',
-    marginTop: 15,
+    marginTop: 55,
+    marginHorizontal: 25,
   },
   buttonGroup: {
     flexDirection: 'row',
@@ -50,11 +45,15 @@ const styles = StyleSheet.create({
     top: 0,
     justifyContent: 'center',
   },
-  errorTxt: {
+  resendText: {
+    textAlign: 'center',
     fontFamily: typography.firesans_semibold,
-    color: 'red',
-    fontSize: 10,
-    marginLeft: 5,
+    color: 'black',
+    marginTop: 20,
+  },
+  secondsText: {
+    fontFamily: typography.firesans_semibold,
+    color: '#455ff8',
   },
 });
 

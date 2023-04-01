@@ -8,6 +8,7 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import {useTranslation} from 'react-i18next';
+import {useNavigation} from '@react-navigation/native';
 
 import PhoneNumberInput from '../../components/phone-number-input/PhoneNumberInput';
 import Next from '../../assets/icons/next.svg';
@@ -20,11 +21,16 @@ const LoginScreen = () => {
   const {t} = useTranslation();
   const [phoneNumber, setPhoneNumber] = useState('');
   const [error, setError] = useState('');
+  const navigation = useNavigation();
 
   const handleContinuePress = () => {
     setError('');
     if (!validatePhoneNumber(phoneNumber)) {
       setError(ERROR_MSG);
+    } else {
+      navigation.navigate('VerifyOtp', {
+        phoneNumber,
+      });
     }
   };
 
@@ -56,7 +62,7 @@ const LoginScreen = () => {
             <View style={styles.buttonGroup}>
               <Text style={styles.buttonText}>{t('login.continue')}</Text>
 
-              <View style={styles.BtnImageContainer}>
+              <View style={styles.btnImageContainer}>
                 <Next height={50} width={50} />
               </View>
             </View>

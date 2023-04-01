@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {
   ImageBackground,
   View,
@@ -11,11 +11,23 @@ import {useTranslation} from 'react-i18next';
 
 import PhoneNumberInput from '../../components/phone-number-input/PhoneNumberInput';
 import Next from '../../assets/icons/next.svg';
+import {validatePhoneNumber} from '../../utils/utility';
 
 import styles from './loginScreen-styles';
 
+const ERROR_MSG = 'Please Enter a valid Phone Number';
 const LoginScreen = () => {
   const {t} = useTranslation();
+  const [phoneNumber, setPhoneNumber] = useState('');
+  const [error, setError] = useState('');
+
+  const handleContinuePress = () => {
+    setError('');
+    if (!validatePhoneNumber(phoneNumber)) {
+      setError(ERROR_MSG);
+    }
+  };
+
   return (
     <ImageBackground
       style={styles.imageContainer}
@@ -32,8 +44,15 @@ const LoginScreen = () => {
             <Text style={styles.boldSubHeading}>{t('login.otp')}</Text>
             {t('login.on-this-num')}
           </Text>
-          <PhoneNumberInput />
-          <TouchableOpacity style={styles.buttonContainer}>
+          <PhoneNumberInput
+            phoneNumber={phoneNumber}
+            setPhoneNumber={setPhoneNumber}
+            setError={setError}
+          />
+          <Text style={styles.errorTxt}>{error}</Text>
+          <TouchableOpacity
+            style={styles.buttonContainer}
+            onPress={handleContinuePress}>
             <View style={styles.buttonGroup}>
               <Text style={styles.buttonText}>{t('login.continue')}</Text>
 

@@ -50,6 +50,12 @@ const styles = StyleSheet.create({
     top: 0,
     justifyContent: 'center',
   },
+  errorTxt: {
+    fontFamily: typography.firesans_semibold,
+    color: 'red',
+    fontSize: 10,
+    marginLeft: 5,
+  },
 });
 
 export default styles;

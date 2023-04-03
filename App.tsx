@@ -1,18 +1,20 @@
 import React from 'react';
-import {SafeAreaView, StatusBar} from 'react-native';
+import {StatusBar} from 'react-native';
+import {SafeAreaProvider} from 'react-native-safe-area-context';
 import {Provider} from 'react-redux';
+import '../findMyBud/src/locales/i18n';
 
 import store from './src/redux/strore';
 import RootNavigator from './src/navigation/RootNavigator';
 
 function App(): JSX.Element {
   return (
-    <SafeAreaView style={{flex: 1}}>
+    <SafeAreaProvider style={{flex: 1}} edges={['right', 'left', 'top']}>
       <StatusBar barStyle={'dark-content'} backgroundColor="white" />
       <Provider store={store}>
         <RootNavigator />
       </Provider>
-    </SafeAreaView>
+    </SafeAreaProvider>
   );
 }
 

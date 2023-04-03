@@ -1,33 +1,22 @@
 import React from 'react';
-import {Text, View} from 'react-native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
+import LoginScreen from '../screens/login-screen/LoginScreen';
+import VerifyOtpScreen from '../screens/verify-top-screen/VerifyOtpScreen';
+
 const Stack = createNativeStackNavigator();
-function SignIn() {
-  return (
-    <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-      <Text>SignIn</Text>
-    </View>
-  );
-}
-function SignOut() {
-  return (
-    <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-      <Text>SignOut</Text>
-    </View>
-  );
-}
+
 function OnBoardingNavigator(): JSX.Element {
   return (
-    <Stack.Navigator>
+    <Stack.Navigator initialRouteName="SignIn">
       <Stack.Screen
         name="SignIn"
-        component={SignIn}
+        component={LoginScreen}
         options={{headerShown: false}}
       />
       <Stack.Screen
-        name="SignOut"
-        component={SignOut}
+        name="VerifyOtp"
+        component={VerifyOtpScreen}
         options={{headerShown: false}}
       />
     </Stack.Navigator>

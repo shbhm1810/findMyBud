@@ -1,0 +1,19 @@
+{
+  "translation": {
+    "login": {
+      "prefix": "+91 ",
+      "mobile-number": "Enter Your Mobile Number",
+      "continue-tap": "On continue tap, We will send you an ",
+      "otp": "one time password",
+      "on-this-num": " on this number",
+      "continue": "Continue"
+    },
+    "verifyOtp": {
+      "verification": "Verification",
+      "heading": "We've send you the verification code on +91 {{phoneNumber}}",
+      "resend": "Re-send code in ",
+      "not-recieved": "Havent Recieved the Code? ",
+      "code": "Re-send Code"
+    }
+  }
+}

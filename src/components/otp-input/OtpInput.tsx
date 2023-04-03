@@ -9,7 +9,7 @@ import {Text} from 'react-native';
 
 import styles from './otpInput-styles';
 
-const CELL_COUNT = 4;
+const CELL_COUNT = 6;
 const OtpInput = (props: {otp: string; setOtp: (val: string) => void}) => {
   const {otp, setOtp} = props;
 

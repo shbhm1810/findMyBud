@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "666387720257",
+    "project_id": "findmybud-30282",
+    "storage_bucket": "findmybud-30282.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:666387720257:android:10d9b89decf01c21f27ec0",
+        "android_client_info": {
+          "package_name": "com.findMyBud.project.staging"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "666387720257-gnj6lrllgk1e0u0bkva2iqtan7lrqjh8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.findMyBud.project.staging",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "666387720257-b16cfoppr7cqsv2e621v05m99u25b97c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAmSvi98R9j-nSJEzvydXAufosXYPQm1qI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "666387720257-b16cfoppr7cqsv2e621v05m99u25b97c.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

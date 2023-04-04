@@ -6,10 +6,13 @@ import {
   KeyboardAvoidingView,
   Platform,
   TouchableOpacity,
+  ActivityIndicator,
 } from 'react-native';
 import {useTranslation} from 'react-i18next';
 import {useNavigation} from '@react-navigation/native';
+import {useDispatch, useSelector} from 'react-redux';
 
+import phoneLogin from '../../redux/actions/user-login-action';
 import PhoneNumberInput from '../../components/phone-number-input/PhoneNumberInput';
 import Next from '../../assets/icons/next.svg';
 import {validatePhoneNumber} from '../../utils/utility';
@@ -23,14 +26,22 @@ const LoginScreen = () => {
   const [error, setError] = useState('');
   const navigation = useNavigation();
 
+  const {isLoadingLogin, errorMessage} = useSelector(state => state.authStore);
+
+  const dispatch = useDispatch();
   const handleContinuePress = () => {
     setError('');
+
     if (!validatePhoneNumber(phoneNumber)) {
       setError(ERROR_MSG);
     } else {
-      navigation.navigate('VerifyOtp', {
-        phoneNumber,
-      });
+      dispatch(
+        phoneLogin(`+91 ${phoneNumber}`, () => {
+          navigation.navigate('VerifyOtp', {
+            phoneNumber,
+          });
+        }),
+      );
     }
   };
 
@@ -59,13 +70,17 @@ const LoginScreen = () => {
           <TouchableOpacity
             style={styles.buttonContainer}
             onPress={handleContinuePress}>
-            <View style={styles.buttonGroup}>
-              <Text style={styles.buttonText}>{t('login.continue')}</Text>
+            {!isLoadingLogin ? (
+              <View style={styles.buttonGroup}>
+                <Text style={styles.buttonText}>{t('login.continue')}</Text>
 
-              <View style={styles.btnImageContainer}>
-                <Next height={50} width={50} />
+                <View style={styles.btnImageContainer}>
+                  <Next height={50} width={50} />
+                </View>
               </View>
-            </View>
+            ) : (
+              <ActivityIndicator size="large" color="white" />
+            )}
           </TouchableOpacity>
         </View>
       </KeyboardAvoidingView>

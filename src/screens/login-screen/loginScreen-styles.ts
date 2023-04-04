@@ -32,13 +32,13 @@ const styles = StyleSheet.create({
     overflow: 'hidden',
     backgroundColor: '#455ff8',
     marginTop: 15,
+    paddingVertical: 15,
   },
   buttonGroup: {
     flexDirection: 'row',
     justifyContent: 'center',
   },
   buttonText: {
-    paddingVertical: 15,
     fontFamily: typography.firesans_bold,
     fontSize: 22,
     color: 'white',

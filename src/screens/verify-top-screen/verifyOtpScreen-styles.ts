@@ -27,13 +27,13 @@ const styles = StyleSheet.create({
     backgroundColor: '#455ff8',
     marginTop: 55,
     marginHorizontal: 25,
+    paddingVertical: 15,
   },
   buttonGroup: {
     flexDirection: 'row',
     justifyContent: 'center',
   },
   buttonText: {
-    paddingVertical: 15,
     fontFamily: typography.firesans_bold,
     fontSize: 22,
     color: 'white',

@@ -1,3 +1,7 @@
 import {combineReducers} from 'redux';
-export const rootReducer = combineReducers({});
+import {userLoginReducer} from './user-login-reducer';
+
+export const rootReducer = combineReducers({
+  authStore: userLoginReducer,
+});
 export type RootStateType = ReturnType<typeof rootReducer>;

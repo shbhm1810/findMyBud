@@ -45,10 +45,11 @@ const VerifyOtpScreen = ({route, navigation}) => {
   function confirmCode() {
     dispatch(
       verifyOtp(confirmation, otp, () => {
-        console.log('suceeess otp');
+        navigation.navigate('AppNavigator', {
+          screen: 'HomeScreen',
+        });
       }),
     );
-    navigation.navigate('HomeScreen');
   }
 
   return (

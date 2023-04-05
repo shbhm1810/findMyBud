@@ -1,10 +1,13 @@
 import Toast from 'react-native-root-toast';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const verifyOtp = (confirmation, otp, callback: () => {}) => async dispatch => {
   try {
     dispatch({type: 'VERITY_OTP_LOADING', payload: true});
-    await confirmation?.confirm(otp);
-    dispatch({type: 'VERITY_OTP_SUCCESS', payload: 'success'});
+    const result = await confirmation?.confirm(otp);
+    const uid = result.user._user.uid;
+    await AsyncStorage.setItem('uid', uid);
+    dispatch({type: 'VERITY_OTP_SUCCESS', payload: uid});
     callback();
   } catch (err) {
     dispatch({

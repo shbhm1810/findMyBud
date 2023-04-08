@@ -3,7 +3,6 @@ require_relative '../node_modules/@react-native-community/cli-platform-ios/nativ
 
 platform :ios, min_ios_version_supported
 prepare_react_native_project!
-
 # If you are using a `react-native-flipper` your iOS build will fail when `NO_FLIPPER=1` is set.
 # because `react-native-flipper` depends on (FlipperKit,...) that will be excluded
 #
@@ -21,11 +20,14 @@ if linkage != nil
   use_frameworks! :linkage => linkage.to_sym
 end
 
+use_frameworks! :linkage => :static
+$RNFirebaseAsStaticFramework = true
+
 project 'findMyBud',
-        'Staging.Debug' => :debug,
-        'Staging.Release' => :release, 
-        'Prod.Debug' => :debug,
-        'Prod.Release' => :release
+        'StagingTest' => :debug,
+        'StagingRelease' => :release, 
+        'ProdTest' => :debug,
+        'ProdRelease' => :release
 
 
 target 'findMyBud' do
@@ -45,13 +47,17 @@ target 'findMyBud' do
     #
     # Note that if you have use_frameworks! enabled, Flipper will not work and
     # you should disable the next line.
-     :flipper_configuration => FlipperConfiguration.enabled(
-      ['staging.debug','prod.debug'],
-      { 'Flipper' => '0.164.0' }
-    ),
+    # :flipper_configuration => FlipperConfiguration.enabled(
+    #  ['StagingTest','ProdTest'],
+    #  { 'Flipper' => '0.164.0' }
+    #),
     # An absolute path to your application root.
     :app_path => "#{Pod::Config.instance.installation_root}/.."
   )
+  pod 'Firebase', :modular_headers => true
+     pod 'FirebaseCore', :modular_headers => true
+     pod 'GoogleUtilities', :modular_headers => true
+     $RNFirebaseAsStaticFramework = true
 
   target 'findMyBudTests' do
     inherit! :complete

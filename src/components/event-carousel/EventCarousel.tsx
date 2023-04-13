@@ -30,7 +30,6 @@ const eventCard = [
 const EventCarousel = (props: {sectionTitle: string; containerStyle?: any}) => {
   const {sectionTitle, containerStyle} = props;
   const renderItem = ({item}) => {
-    console.log(item);
     return (
       <View style={[styles.cardContainer, containerStyle]}>
         <Image source={require('../../assets/images/eventImage.png')} />

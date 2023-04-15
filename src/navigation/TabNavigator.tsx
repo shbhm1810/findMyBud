@@ -4,6 +4,7 @@ import {Text, View, StyleSheet} from 'react-native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 
 import HomeScreen from '../screens/home-screen/HomeScreen';
+import EventScreen from '../screens/event-screen/EventScreen';
 import CalenderSVG from '../assets/icons/Calendar.svg';
 import ActiveCalendarSVG from '../assets/icons/ActiveCalendar';
 import ProfileSVG from '../assets/icons/profile.svg';
@@ -12,29 +13,24 @@ import ActiveProfileSVG from '../assets/icons/ActiveProfile.svg';
 import ActiveLocationSVG from '../assets/icons/ActiveLocation';
 import typography from '../theme/typography';
 
-function MyEvents() {
-  return (
-    <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-      <Text>My Events</Text>
-    </View>
-  );
-}
 function Profile() {
   return (
     <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-      <Text>Profile</Text>
+      <Text>My Profile</Text>
     </View>
   );
 }
+
 const Tab = createBottomTabNavigator();
 function TabNavigator() {
   return (
     <Tab.Navigator initialRouteName="Home">
       <Tab.Screen
         name="MyEvents"
-        component={MyEvents}
+        component={EventScreen}
         options={{
           title: 'My Events',
+          headerShown: false,
           tabBarLabelStyle: styles.tabTitle,
           tabBarActiveTintColor: '#4A43EC',
           tabBarIcon: ({focused}) => {

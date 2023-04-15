@@ -6,7 +6,7 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import HomeScreen from '../screens/home-screen/HomeScreen';
 import CalenderSVG from '../assets/icons/Calendar.svg';
 import ActiveCalendarSVG from '../assets/icons/ActiveCalendar';
-import ProfileSVG from '../assets/icons/Profile.svg';
+import ProfileSVG from '../assets/icons/profile.svg';
 import LocationSVG from '../assets/icons/Location.svg';
 import ActiveProfileSVG from '../assets/icons/ActiveProfile.svg';
 import ActiveLocationSVG from '../assets/icons/ActiveLocation';

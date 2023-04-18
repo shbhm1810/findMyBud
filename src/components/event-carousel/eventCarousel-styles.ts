@@ -40,6 +40,7 @@ const styles = StyleSheet.create({
   },
   locationTxt: {
     color: '#716E90',
+    marginLeft: 4,
   },
   locationContainer: {flexDirection: 'row', alignItems: 'center'},
   bottomContainer: {marginLeft: 10, marginTop: 15},

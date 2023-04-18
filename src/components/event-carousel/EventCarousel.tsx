@@ -35,7 +35,10 @@ const EventCarousel = (props: {sectionTitle: string; containerStyle?: any}) => {
         <Image source={require('../../assets/images/eventImage.png')} />
         <View style={styles.bottomContainer}>
           <Text style={styles.titleHeading}>{item.eventName}</Text>
-          <Text style={styles.eventJoinedTxt}>{`+${item.peopleJoined}`}</Text>
+          {/* <Text
+            style={
+              styles.eventJoinedTxt
+            }>{`People Joined +${item.peopleJoined}`}</Text> */}
           <View style={styles.locationContainer}>
             <LocationIcon />
             <Text style={styles.locationTxt}>{item.address}</Text>

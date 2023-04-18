@@ -7,23 +7,24 @@ import {
 } from 'react-native';
 import {TabView, SceneMap} from 'react-native-tab-view';
 
-import UpcomingEventsScreen from '../upcoming-events-screen/UpcomingEventsScreen';
+import UpcomingEventsScreen from '../../../upcoming-events-screen/UpcomingEventsScreen';
+import AboutMe from '../about-me/AboutMe';
 
-import styles from './eventScreen-styles';
+import styles from './detailSection-styles';
 
 const renderScene = SceneMap({
-  first: UpcomingEventsScreen,
+  first: AboutMe,
   second: UpcomingEventsScreen,
 });
 
-const EventScreen = () => {
+const DetailSection = () => {
   const layout = useWindowDimensions();
 
   const [index, setIndex] = useState(0);
 
   const [routes] = useState([
-    {key: 'first', title: 'Upcoming Events'},
-    {key: 'second', title: 'Past Events'},
+    {key: 'first', title: 'About'},
+    {key: 'second', title: 'Created Events'},
   ]);
 
   const renderBar = props => {
@@ -73,4 +74,4 @@ const EventScreen = () => {
   );
 };
 
-export default EventScreen;
+export default DetailSection;

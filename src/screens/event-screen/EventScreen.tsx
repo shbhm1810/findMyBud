@@ -7,6 +7,8 @@ import {
 } from 'react-native';
 import {TabView, SceneMap} from 'react-native-tab-view';
 
+import UpcomingEventsScreen from '../upcoming-events-screen/UpcomingEventsScreen';
+
 import styles from './eventScreen-styles';
 
 const FirstRoute = () => <View style={{flex: 1, backgroundColor: '#ff4081'}} />;
@@ -16,8 +18,8 @@ const SecondRoute = () => (
 );
 
 const renderScene = SceneMap({
-  first: FirstRoute,
-  second: SecondRoute,
+  first: UpcomingEventsScreen,
+  second: UpcomingEventsScreen,
 });
 
 const EventScreen = () => {

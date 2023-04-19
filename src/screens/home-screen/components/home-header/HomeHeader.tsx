@@ -1,5 +1,6 @@
 import React from 'react';
 import {FlatList, Pressable, TouchableOpacity, View, Text} from 'react-native';
+import {useNavigation} from '@react-navigation/native';
 
 import HambergerIcon from '../../../../assets/icons/hamburger1';
 import NotificationBellIcon from '../../../../assets/icons/notification';
@@ -34,6 +35,8 @@ const sortFilters = [
 ];
 
 const HomeHeader = () => {
+  const navigation = useNavigation();
+
   const renderItem = ({item}) => {
     return (
       <View style={[styles.filterContainer, {backgroundColor: item.color}]}>
@@ -46,7 +49,11 @@ const HomeHeader = () => {
   return (
     <View style={styles.container}>
       <View style={styles.subContainer}>
-        <Pressable>
+        <Pressable
+          onPress={() => {
+            // navigation.navigate(DrawerActions.openDrawer());
+            navigation.openDrawer();
+          }}>
           <HambergerIcon />
         </Pressable>
         <Pressable>

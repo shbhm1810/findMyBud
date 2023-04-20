@@ -13,7 +13,7 @@ const sidebarOptions = [
   },
 ];
 
-export default function Sidebar() {
+const Sidebar = () => {
   return (
     <View style={styles.container}>
       <View style={styles.header}>
@@ -37,4 +37,6 @@ export default function Sidebar() {
       </ScrollView>
     </View>
   );
-}
+};
+
+export default Sidebar;

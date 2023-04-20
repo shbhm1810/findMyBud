@@ -14,7 +14,7 @@ const styles = StyleSheet.create({
     marginTop: 50,
   },
   subContainer: {
-    marginTop: 20,
+    marginTop: 50,
   },
   image: {
     width: 70,

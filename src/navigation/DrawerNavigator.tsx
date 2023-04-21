@@ -9,11 +9,9 @@ const Drawer = createDrawerNavigator();
 const DrawerNavigator = () => {
   return (
     <Drawer.Navigator
-      // screenOptions={{headerShown: false}}
-      screenOptions={{headerShown: false}}
-      drawerStyle={{
-        backgroundColor: '#c6cbef',
-        width: Dimensions.get('screen').width * 0.8,
+      screenOptions={{
+        headerShown: false,
+        drawerStyle: {width: Dimensions.get('screen').width * 0.6},
       }}
       drawerContent={() => <Sidebar />}>
       <Drawer.Screen name="Homescreen" component={TabNavigator} />

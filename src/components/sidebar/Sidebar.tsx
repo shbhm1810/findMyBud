@@ -1,6 +1,7 @@
 import React from 'react';
 import {View, Text, ScrollView, TouchableOpacity} from 'react-native';
 import FastImage from 'react-native-fast-image';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 import SignOutIcon from '../../assets/icons/signout';
 
@@ -28,7 +29,11 @@ const Sidebar = () => {
         {sidebarOptions.map(item => {
           const {title, Icon} = item;
           return (
-            <TouchableOpacity style={styles.button}>
+            <TouchableOpacity
+              style={styles.button}
+              onPress={() => {
+                AsyncStorage.removeItem('uid');
+              }}>
               <Icon width={30} height={30} />
               <Text style={styles.titleText}>{title}</Text>
             </TouchableOpacity>
